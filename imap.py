@@ -22,6 +22,18 @@ account = Account(
     autodiscover=True,
     access_type=DELEGATE
 )
+
+def print_tree(account):
+    """
+    Print forlder tree
+    """
+    print(account.root.tree())
+
 # Print first 100 inbox messages in reverse order
-for item in account.inbox.all().order_by('-datetime_received')[:100]:
+for item in account.inbox.all().order_by('-datetime_received')[:1]:
     print(item.subject, item.body, item.attachments)
+    #print(item.subject)
+
+print_tree(account)
+
+
